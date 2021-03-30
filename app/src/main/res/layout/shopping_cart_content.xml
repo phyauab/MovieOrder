@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintlayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    android:dividerHeight="20dp"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ShoppingCart">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/shopping_cart_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_toolbar_translucent"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:titleTextColor="#FFFFFF" />
+
+    <ListView
+        android:id="@+id/shopping_cart_movie"
+        android:layout_width="0dp"
+        android:layout_height="544dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_purchase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shopping_cart_toolbar">
+
+    </ListView>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_purchase"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="400dp"
+        android:layout_height="52dp"
+        android:background="@drawable/ripple"
+        android:backgroundTint="#4B088A"
+        android:onClick="purchase"
+        android:text="Purchase"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

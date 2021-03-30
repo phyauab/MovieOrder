@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    android:fillViewport="true"
+    tools:context=".ShowDetail">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:animateLayoutChanges="true">
+
+        <com.example.clement.movieorder.FadingImageView
+            android:id="@+id/backpic"
+            android:layout_width="411dp"
+            android:layout_height="170dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/btn_trailer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/film2" />
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="105dp"
+            android:layout_height="168dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="56dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/backpic"
+            app:srcCompat="@drawable/film2" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:background="#80000000"
+            app:layout_constraintBottom_toBottomOf="@+id/poster"
+            app:layout_constraintEnd_toEndOf="@+id/poster"
+            app:layout_constraintStart_toStartOf="@+id/poster"
+            app:layout_constraintTop_toTopOf="@+id/poster"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/detail_title"
+            android:layout_width="250dp"
+            android:layout_height="82dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="88dp"
+            android:autoSizeMinTextSize="15dp"
+            android:gravity="bottom"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="15"
+            android:text="Title"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintTop_toTopOf="@+id/backpic" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_trailer"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="250dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/ripple"
+            android:backgroundTint="#0431B4"
+            android:gravity="center"
+            android:onClick="WatchTrailer"
+            android:text="Trailer"
+            android:textSize="15dp"
+            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/detail_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:drawableLeft="@drawable/star"
+            android:gravity="center"
+            android:text="4.5/5.0"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:cardBackgroundColor="#1C1C1C"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_trailer">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/Information"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Information"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/director_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Director: "
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Information" />
+
+                <TextView
+                    android:id="@+id/detail_director"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Tom "
+                    android:textColor="#6E6E6E"
+                    app:layout_constraintStart_toEndOf="@+id/director_label"
+                    app:layout_constraintTop_toBottomOf="@+id/Information" />
+
+                <TextView
+                    android:id="@+id/writer_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Writers: "
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/director_label" />
+
+                <TextView
+                    android:id="@+id/detail_writer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Tom "
+                    android:textColor="#6E6E6E"
+                    app:layout_constraintStart_toEndOf="@+id/writer_label"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_director" />
+
+                <TextView
+                    android:id="@+id/types_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Types: "
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/writer_label" />
+
+                <TextView
+                    android:id="@+id/detail_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Tom "
+                    android:textColor="#6E6E6E"
+                    app:layout_constraintStart_toEndOf="@+id/types_label"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_writer" />
+
+                <TextView
+                    android:id="@+id/stars_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Stars: "
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/types_label" />
+
+                <TextView
+                    android:id="@+id/detail_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Tom "
+                    android:textColor="#6E6E6E"
+                    app:layout_constraintStart_toEndOf="@+id/stars_label"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_type" />
+
+                <TextView
+                    android:id="@+id/duration_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Duration:"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/stars_label" />
+
+                <TextView
+                    android:id="@+id/detail_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Tom "
+                    android:textColor="#6E6E6E"
+                    app:layout_constraintStart_toEndOf="@+id/duration_label"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_star" />
+
+                <TextView
+                    android:id="@+id/plot_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Plot: "
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/duration_label" />
+
+                <TextView
+                    android:id="@+id/detail_plot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="plot"
+                    android:textColor="#6E6E6E"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/plot_label" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/add_to_cart"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="400dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/ripple"
+            android:backgroundTint="#B4045F"
+            android:onClick="AddToCart"
+            android:text="Add To Cart"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="wrap"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>
